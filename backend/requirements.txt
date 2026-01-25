@@ -1,7 +1,37 @@
 # requirements.txt
+
+# Core Framework
 fastapi
-uvicorn
+uvicorn[standard]
+pydantic[email]
+pydantic-settings
+python-dotenv
+
+# Database
+sqlalchemy
+aiosqlite
+alembic
+greenlet
+
+# Authentication
+python-jose[cryptography]
+passlib[bcrypt]
+httpx
+authlib
+
+# File uploads
+python-multipart
+
+# AI/ML Integration (for Naman's work)
 qdrant-client
 sentence-transformers
 requests
-pydantic
+
+# WebSocket (for Rooms)
+websockets
+
+# WhatsApp (Future)
+# twilio
+
+# Utils
+email-validator
