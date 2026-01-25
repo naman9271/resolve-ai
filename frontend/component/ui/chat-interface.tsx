@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { Send, Paperclip } from "lucide-react";
-import { AIButton } from "./ai-button";
+import { Send, Paperclip, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export const ChatInterface = () => {
 
@@ -50,19 +50,15 @@ export const ChatInterface = () => {
           ))}
         </div>
 
-        {/* Input */}
+        {/* Input / CTA */}
         <div className="p-4 border-t border-neutral-700 bg-neutral-900">
-          <div className="flex items-center gap-3">
-            <button className="text-neutral-500 hover:text-cyan-400 transition-colors p-2 rounded-md hover:bg-neutral-800">
-              <Paperclip className="w-4 h-4" />
-            </button>
-            <div className="flex-1">
-              <AIButton />
-            </div>
-            <button className="text-neutral-500 hover:text-cyan-400 transition-colors p-2 rounded-md hover:bg-neutral-800">
-              <Send className="w-4 h-4" />
-            </button>
-          </div>
+          <Link
+            href="/chat"
+            className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-medium py-3 rounded-lg transition-all"
+          >
+            Start Asking Your Doubts
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </div>
     </div>
