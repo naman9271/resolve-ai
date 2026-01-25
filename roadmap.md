@@ -48,6 +48,18 @@
 - College Councelling and rank predictor
   - AI Based college counselling and rank predictor based on previous year data of JEE Main and Advanced
 
+- Room Feature 
+  - students can create/join rooms based on their preferences (branch, college, location)
+  - in rooms students can discuss topics, share resources, and collaborate on projects
+  - rooms can be public or private (invite only)
+
+
+**Mentor** -> 
+1. Mentor name and photo will be anonymous
+2. user can choose his own mentor from the list of available mentors
+3. mentor will be paid on per session basis (30 mins/1 hour)
+
+
 
 - Mentor login
   - college verification (iit/nit tier 1)
