@@ -95,9 +95,36 @@ class StudentProfileResponse(BaseModel):
     total_questions_solved: int
     whatsapp_verified: bool
     created_at: datetime
+    is_profile_complete: bool = False
 
     class Config:
         from_attributes = True
+
+    @classmethod
+    def from_profile(cls, profile) -> "StudentProfileResponse":
+        """Create response with computed is_profile_complete field"""
+        # Profile is complete if target_score and current_score are set
+        is_complete = (
+            profile.target_score is not None and
+            profile.current_score is not None
+        )
+        return cls(
+            id=profile.id,
+            user_id=profile.user_id,
+            category=profile.category,
+            school_type=profile.school_type,
+            target_year=profile.target_year,
+            target_exam=profile.target_exam,
+            current_score=profile.current_score,
+            target_score=profile.target_score,
+            is_premium=profile.is_premium,
+            subscription_end=profile.subscription_end,
+            streak_days=profile.streak_days,
+            total_questions_solved=profile.total_questions_solved,
+            whatsapp_verified=profile.whatsapp_verified,
+            created_at=profile.created_at,
+            is_profile_complete=is_complete,
+        )
 
 
 class StudentProfileUpdate(BaseModel):

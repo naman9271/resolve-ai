@@ -88,10 +88,7 @@ async def create_student_profile(
     await db.commit()
     await db.refresh(profile)
     
-    return profile
-
-
-@router.get("/student/profile", response_model=StudentProfileResponse)
+    return StudentProfileResponse.from_profile(profile), response_model=StudentProfileResponse)
 async def get_student_profile(
     current_user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db)
@@ -108,7 +105,7 @@ async def get_student_profile(
             detail="Student profile not found"
         )
     
-    return profile
+    return StudentProfileResponse.from_profile(profile)
 
 
 @router.patch("/student/profile", response_model=StudentProfileResponse)
@@ -137,7 +134,7 @@ async def update_student_profile(
     await db.commit()
     await db.refresh(profile)
     
-    return profile
+    return StudentProfileResponse.from_profile(profile)
 
 
 # ============== Mentor Profile Routes ==============

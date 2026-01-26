@@ -41,6 +41,7 @@ export interface StudentProfile {
   total_questions_solved: number;
   whatsapp_verified: boolean;
   created_at: string;
+  is_profile_complete: boolean;
 }
 
 export interface MentorProfile {
