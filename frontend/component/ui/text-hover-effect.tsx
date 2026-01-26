@@ -5,10 +5,12 @@ import { motion } from "motion/react";
 export const TextHoverEffect = ({
   text,
   duration,
+  fillColor = "#6b7280",
 }: {
   text: string;
   duration?: number;
   automatic?: boolean;
+  fillColor?: string;
 }) => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
@@ -32,7 +34,7 @@ export const TextHoverEffect = ({
       ref={svgRef}
       width="100%"
       height="100%"
-      viewBox="0 0 600 180"
+      viewBox="0 0 650 200"
       xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -49,11 +51,11 @@ export const TextHoverEffect = ({
         >
           {hovered && (
             <>
-              <stop offset="0%" stopColor="#eab308" />
-              <stop offset="25%" stopColor="#ef4444" />
-              <stop offset="50%" stopColor="#3b82f6" />
-              <stop offset="75%" stopColor="#06b6d4" />
-              <stop offset="100%" stopColor="#8b5cf6" />
+              <stop offset="0%" stopColor="#06b6d4" />
+              <stop offset="25%" stopColor="#3b82f6" />
+              <stop offset="50%" stopColor="#8b5cf6" />
+              <stop offset="75%" stopColor="#3b82f6" />
+              <stop offset="100%" stopColor="#06b6d4" />
             </>
           )}
         </linearGradient>
@@ -65,14 +67,6 @@ export const TextHoverEffect = ({
           initial={{ cx: "50%", cy: "50%" }}
           animate={maskPosition}
           transition={{ duration: duration ?? 0, ease: "easeOut" }}
-
-          // example for a smoother animation below
-
-          //   transition={{
-          //     type: "spring",
-          //     stiffness: 300,
-          //     damping: 50,
-          //   }}
         >
           <stop offset="0%" stopColor="white" />
           <stop offset="100%" stopColor="black" />
@@ -87,36 +81,41 @@ export const TextHoverEffect = ({
           />
         </mask>
       </defs>
+      {/* Base text - dark grey fill */}
       <text
         x="50%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
-        fill="#6b7280"
-        className="font-[helvetica] text-8xl font-bold"
+        fill={fillColor}
+        className="font-[helvetica] text-9xl font-bold"
+        style={{ fontSize: "110px" }}
       >
         {text}
       </text>
+      {/* Stroke outline on hover */}
       <text
         x="50%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
-        strokeWidth="0.3"
-        className="fill-transparent stroke-neutral-200 font-[helvetica] text-8xl font-bold dark:stroke-neutral-800"
-        style={{ opacity: hovered ? 0.7 : 0 }}
+        strokeWidth="0.5"
+        className="fill-transparent stroke-neutral-400 font-[helvetica] text-9xl font-bold"
+        style={{ opacity: hovered ? 0.7 : 0, fontSize: "110px" }}
       >
         {text}
       </text>
+      {/* Animated stroke drawing */}
       <motion.text
         x="50%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
-        stroke="white"
-        strokeWidth="1"
+        stroke="#d1d5db"
+        strokeWidth="1.5"
         fill="transparent"
-        className="font-[helvetica] text-8xl font-bold"
+        className="font-[helvetica] text-9xl font-bold"
+        style={{ fontSize: "110px" }}
         initial={{ strokeDashoffset: 2000, strokeDasharray: 2000 }}
         animate={{
           strokeDashoffset: 0,
@@ -129,15 +128,17 @@ export const TextHoverEffect = ({
       >
         {text}
       </motion.text>
+      {/* Gradient reveal on hover */}
       <text
         x="50%"
         y="50%"
         textAnchor="middle"
         dominantBaseline="middle"
         stroke="url(#textGradient)"
-        strokeWidth="1"
+        strokeWidth="1.5"
         mask="url(#textMask)"
-        className="fill-transparent font-[helvetica] text-8xl font-bold"
+        className="fill-transparent font-[helvetica] text-9xl font-bold"
+        style={{ fontSize: "110px" }}
       >
         {text}
       </text>

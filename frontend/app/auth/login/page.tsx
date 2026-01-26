@@ -2,9 +2,12 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Mail, Lock, User, ArrowRight, Loader2 } from "lucide-react";
+import { Mail, Lock, ArrowRight, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
+import { Illustration } from "@/component/ui/glowing-stars";
+import { CardSpotlight } from "@/components/ui/card-spotlight";
+import { TextHoverEffect } from "@/component/ui/text-hover-effect";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -14,6 +17,7 @@ export default function LoginPage() {
     password: "",
   });
   const [error, setError] = useState("");
+  const [mouseEnter, setMouseEnter] = useState(false);
 
   // Redirect if already logged in
   useEffect(() => {
@@ -35,41 +39,53 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black flex items-center justify-center px-4">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-black to-blue-900/20" />
+    <div 
+      className="min-h-screen bg-black flex items-center justify-center px-4 relative overflow-hidden"
+      onMouseEnter={() => setMouseEnter(true)}
+      onMouseLeave={() => setMouseEnter(false)}
+    >
+      {/* Glowing Stars Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[linear-gradient(110deg,#0a0a0a_0.6%,#111)] opacity-90" />
+        <div className="absolute inset-0 flex items-center justify-center scale-[3] opacity-40">
+          <Illustration mouseEnter={mouseEnter} />
+        </div>
+        {/* Gradient overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/10 via-transparent to-blue-900/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+      </div>
       
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="relative w-full max-w-md"
+        className="relative z-10 w-full max-w-md"
       >
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <Link href="/">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              RESOLVE AI
-            </h1>
+        {/* Logo with TextHoverEffect */}
+        <div className="text-center mb-6">
+          <Link href="/" className="block">
+            <div className="h-28 w-full flex items-center justify-center">
+              <TextHoverEffect text="RESOLVE AI" duration={0.15} />
+            </div>
           </Link>
           <p className="text-neutral-400 mt-2">Welcome back, future IITian!</p>
         </div>
 
         {/* Login Card */}
-        <div className="bg-neutral-900/80 backdrop-blur-xl border border-neutral-800 rounded-2xl p-8 shadow-2xl">
-          <h2 className="text-2xl font-semibold text-white mb-6">Sign In</h2>
+        <CardSpotlight className="w-full rounded-2xl p-8" radius={400} color="#1a1a2e">
+          <h2 className="text-2xl font-semibold text-white mb-6 relative z-20">Sign In</h2>
 
           {error && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-red-500/10 border border-red-500/50 text-red-400 px-4 py-3 rounded-lg mb-6 text-sm"
+              className="bg-red-500/10 border border-red-500/50 text-red-400 px-4 py-3 rounded-lg mb-6 text-sm relative z-20"
             >
               {error}
             </motion.div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5 relative z-20">
             {/* Email */}
             <div>
               <label className="block text-sm font-medium text-neutral-300 mb-2">
@@ -138,7 +154,7 @@ export default function LoginPage() {
           </form>
 
           {/* Divider */}
-          <div className="flex items-center gap-4 my-6">
+          <div className="flex items-center gap-4 my-6 relative z-20">
             <div className="flex-1 h-px bg-neutral-700" />
             <span className="text-neutral-500 text-sm">or</span>
             <div className="flex-1 h-px bg-neutral-700" />
@@ -147,7 +163,7 @@ export default function LoginPage() {
           {/* Google Login */}
           <button
             onClick={loginWithGoogle}
-            className="w-full bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 text-white font-medium py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-3"
+            className="w-full bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 text-white font-medium py-3 rounded-lg transition-all duration-200 flex items-center justify-center gap-3 relative z-20"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path
@@ -171,7 +187,7 @@ export default function LoginPage() {
           </button>
 
           {/* Register Link */}
-          <p className="text-center text-neutral-400 mt-6">
+          <p className="text-center text-neutral-400 mt-6 relative z-20">
             Don&apos;t have an account?{" "}
             <Link
               href="/auth/register"
@@ -180,7 +196,7 @@ export default function LoginPage() {
               Sign up
             </Link>
           </p>
-        </div>
+        </CardSpotlight>
       </motion.div>
     </div>
   );
