@@ -30,7 +30,7 @@ class UserBase(BaseModel):
     """Base user schema"""
     email: EmailStr
     full_name: str = Field(..., min_length=2, max_length=100)
-    phone: Optional[str] = Field(None, pattern=r"^\+?[1-9]\d{9,14}$")
+    phone: Optional[str] = Field(None, max_length=20)
 
 
 class UserCreate(UserBase):

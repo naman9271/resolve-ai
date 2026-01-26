@@ -124,10 +124,20 @@ async function apiRequest<T>(
   });
 
   if (!response.ok) {
-    const error: ApiError = await response.json().catch(() => ({
+    const errorData = await response.json().catch(() => ({
       detail: "An error occurred",
     }));
-    throw new Error(error.detail);
+    
+    // Handle FastAPI validation errors (422)
+    if (Array.isArray(errorData.detail)) {
+      const messages = errorData.detail.map((err: { loc: string[]; msg: string }) => {
+        const field = err.loc[err.loc.length - 1];
+        return `${field}: ${err.msg}`;
+      });
+      throw new Error(messages.join(", "));
+    }
+    
+    throw new Error(errorData.detail || "An error occurred");
   }
 
   return response.json();
