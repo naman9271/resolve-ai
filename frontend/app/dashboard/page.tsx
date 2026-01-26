@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   BookOpen,
   Brain,
@@ -16,11 +16,13 @@ import {
   ChevronRight,
   AlertCircle,
   X,
+  Zap,
 } from "lucide-react";
 import Link from "next/link";
 import { useAuth } from "@/lib/auth-context";
-import { studentApi, StudentProfile } from "@/lib/api";
+import { studentApi, StudentProfile, activityApi, StreakData } from "@/lib/api";
 import { Navbar } from "@/component/ui/navbar";
+import { SolvedBurst, CelebrationOverlay } from "@/component/ui/activity-heatmap";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -28,6 +30,8 @@ export default function DashboardPage() {
   const [studentProfile, setStudentProfile] = useState<StudentProfile | null>(null);
   const [profileLoading, setProfileLoading] = useState(true);
   const [showProfileBanner, setShowProfileBanner] = useState(true);
+  const [streakData, setStreakData] = useState<StreakData | null>(null);
+  const [showCelebration, setShowCelebration] = useState(false);
 
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
@@ -41,6 +45,17 @@ export default function DashboardPage() {
         try {
           const profile = await studentApi.getProfile();
           setStudentProfile(profile);
+          
+          // Fetch streak data
+          try {
+            const streak = await activityApi.getStreak();
+            setStreakData(streak);
+            if (streak.is_new_milestone && streak.current_milestone) {
+              setShowCelebration(true);
+            }
+          } catch (err) {
+            // Activity data not available yet
+          }
         } catch (error) {
           // Profile doesn't exist, redirect to onboarding
           router.push("/onboarding/student");
@@ -129,6 +144,19 @@ export default function DashboardPage() {
     <div className="min-h-screen bg-black">
       <Navbar />
       
+      {/* Celebration overlay for streak milestones */}
+      <AnimatePresence>
+        {showCelebration && streakData?.current_milestone && (
+          <CelebrationOverlay
+            milestone={streakData.current_milestone.days}
+            message={streakData.current_milestone.message}
+            emoji={streakData.current_milestone.emoji}
+            celebrationType={streakData.current_milestone.celebration_type}
+            onClose={() => setShowCelebration(false)}
+          />
+        )}
+      </AnimatePresence>
+      
       <main className="pt-20 px-6 md:px-12 lg:px-20 pb-12">
         <div className="max-w-screen-xl mx-auto">
           {/* Profile Completion Banner */}
@@ -214,7 +242,48 @@ export default function DashboardPage() {
             <h2 className="text-xl font-semibold text-white mb-4">
               Quick Actions
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+              {/* Activity Tracker Card */}
+              <Link
+                href="/activity"
+                className="group bg-gradient-to-br from-orange-500/10 to-red-500/10 border border-orange-500/30 rounded-xl p-5 hover:border-orange-500/50 transition-all hover:scale-[1.02]"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <motion.span
+                    animate={{ scale: [1, 1.1, 1], rotate: [-5, 5, -5] }}
+                    transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
+                    className="text-3xl"
+                  >
+                    🔥
+                  </motion.span>
+                  <div>
+                    <p className="text-2xl font-bold text-white">
+                      {streakData?.current_streak || studentProfile?.streak_days || 0}
+                    </p>
+                    <p className="text-xs text-orange-300">Day Streak</p>
+                  </div>
+                </div>
+                {streakData?.next_milestone && (
+                  <div className="mb-2">
+                    <div className="flex justify-between text-xs text-neutral-400 mb-1">
+                      <span>{streakData.next_milestone.emoji} Next: {streakData.next_milestone.name}</span>
+                      <span>{streakData.days_to_next_milestone}d</span>
+                    </div>
+                    <div className="bg-neutral-800 rounded-full h-1.5 overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-orange-500 to-red-500 rounded-full"
+                        style={{
+                          width: `${((streakData.next_milestone.days - streakData.days_to_next_milestone) / streakData.next_milestone.days) * 100}%`
+                        }}
+                      />
+                    </div>
+                  </div>
+                )}
+                <p className="text-xs text-neutral-400 group-hover:text-orange-300 transition-colors flex items-center gap-1">
+                  View Activity Graph <ChevronRight className="w-3 h-3" />
+                </p>
+              </Link>
+
               {quickActions.map((action, index) => (
                 <Link
                   key={index}

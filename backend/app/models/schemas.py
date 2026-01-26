@@ -201,6 +201,45 @@ class GoogleUserInfo(BaseModel):
     verified_email: bool = False
 
 
+# ============== Activity Tracking Schemas ==============
+
+class DailyActivityResponse(BaseModel):
+    """Schema for daily activity response"""
+    date: str  # YYYY-MM-DD format
+    questions_solved: int
+    pyq_solved: int
+    study_minutes: int
+    chat_queries: int
+    activity_level: int  # 0-4
+
+    class Config:
+        from_attributes = True
+
+
+class ActivityLogRequest(BaseModel):
+    """Schema for logging activity"""
+    activity_type: str  # "question_solved", "pyq_solved", "study_time", "chat_query"
+    count: int = 1
+    study_minutes: Optional[int] = None
+
+
+class ActivityHeatmapResponse(BaseModel):
+    """Schema for activity heatmap data"""
+    activities: list[DailyActivityResponse]
+    total_questions: int
+    current_streak: int
+    longest_streak: int
+    total_active_days: int
+
+
+class StreakMilestone(BaseModel):
+    """Schema for streak milestone celebrations"""
+    milestone: int  # 3, 7, 14, 30, 50, 100, etc.
+    message: str
+    emoji: str
+    celebration_type: str  # "confetti", "fireworks", "stars"
+
+
 # ============== Generic Response Schemas ==============
 
 class MessageResponse(BaseModel):

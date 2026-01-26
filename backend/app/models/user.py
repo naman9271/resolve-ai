@@ -159,3 +159,30 @@ class MentorProfile(Base):
     
     # Relationships
     user: Mapped["User"] = relationship(back_populates="mentor_profile")
+
+
+class DailyActivity(Base):
+    """Track daily study activity for GitHub-style heatmap"""
+    __tablename__ = "daily_activities"
+
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey("users.id"), index=True)
+    date: Mapped[datetime] = mapped_column(DateTime, index=True)  # Date only, time set to 00:00
+    
+    # Activity counts
+    questions_solved: Mapped[int] = mapped_column(default=0)
+    pyq_solved: Mapped[int] = mapped_column(default=0)
+    study_minutes: Mapped[int] = mapped_column(default=0)
+    chat_queries: Mapped[int] = mapped_column(default=0)
+    
+    # Computed activity level (0-4 like GitHub)
+    activity_level: Mapped[int] = mapped_column(default=0)  # 0=none, 1=low, 2=medium, 3=high, 4=max
+    
+    # Timestamps
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    updated_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    # Unique constraint per user per day
+    __table_args__ = (
+        # UniqueConstraint('user_id', 'date', name='unique_user_date'),
+    )

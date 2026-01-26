@@ -301,10 +301,71 @@ export const chatApi = {
   },
 };
 
+// ============== Activity API (GitHub-style tracking) ==============
+
+export interface DailyActivity {
+  date: string;
+  questions_solved: number;
+  pyq_solved: number;
+  study_minutes: number;
+  chat_queries: number;
+  activity_level: number;
+}
+
+export interface ActivityHeatmapData {
+  activities: DailyActivity[];
+  total_questions: number;
+  current_streak: number;
+  longest_streak: number;
+  total_active_days: number;
+}
+
+export interface StreakMilestone {
+  days: number;
+  name: string;
+  emoji: string;
+  celebration_type: string;
+  message: string;
+}
+
+export interface StreakData {
+  current_streak: number;
+  longest_streak: number;
+  current_milestone: StreakMilestone | null;
+  next_milestone: StreakMilestone | null;
+  days_to_next_milestone: number;
+  is_new_milestone: boolean;
+  encouragement: string;
+}
+
+export const activityApi = {
+  logActivity: async (data: {
+    questions_solved?: number;
+    pyq_solved?: number;
+    study_minutes?: number;
+    chat_queries?: number;
+  }): Promise<DailyActivity> => {
+    return apiRequest<DailyActivity>("/api/v1/activity/log", {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+  },
+
+  getHeatmap: async (days?: number): Promise<ActivityHeatmapData> => {
+    const query = days ? `?days=${days}` : "";
+    return apiRequest<ActivityHeatmapData>(`/api/v1/activity/heatmap${query}`);
+  },
+
+  getStreak: async (): Promise<StreakData> => {
+    return apiRequest<StreakData>("/api/v1/activity/streak");
+  },
+};
+
 export default {
   auth: authApi,
   user: userApi,
   student: studentApi,
   mentor: mentorApi,
   chat: chatApi,
+  activity: activityApi,
 };

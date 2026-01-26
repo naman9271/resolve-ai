@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.utils.config import settings
 from app.db.database import create_tables
-from app.routes import auth, users
+from app.routes import auth, users, activity
 
 
 @asynccontextmanager
@@ -65,6 +65,7 @@ app.add_middleware(
 # Include routers
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["Authentication"])
 app.include_router(users.router, prefix="/api/v1/users", tags=["Users"])
+app.include_router(activity.router, prefix="/api/v1/activity", tags=["Activity & Streaks"])
 
 
 # Root endpoint
