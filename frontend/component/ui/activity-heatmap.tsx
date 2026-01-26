@@ -134,22 +134,27 @@ export function ActivityHeatmap({ data, onCelebration }: ActivityHeatmapProps) {
       </div>
 
       {/* Month labels */}
-      <div className="flex mb-1 ml-8">
-        {getMonthLabels().map(({ month, week }, i) => (
-          <div
-            key={i}
-            className="text-xs text-neutral-500"
-            style={{
-              position: "relative",
-              left: `${week * 14 - (i > 0 ? getMonthLabels()[i - 1].week * 14 : 0)}px`,
-              marginRight: i < getMonthLabels().length - 1 
-                ? `${(getMonthLabels()[i + 1].week - week) * 14 - 30}px` 
-                : "0",
-            }}
-          >
-            {month}
-          </div>
-        ))}
+      <div className="flex mb-2 ml-8 text-xs text-neutral-500">
+        {(() => {
+          const labels = getMonthLabels();
+          // Each cell is 12px + 3px gap = 15px per week
+          const weekWidth = 15;
+          return labels.map(({ month, week }, i) => {
+            const nextWeek = labels[i + 1]?.week ?? grid.length;
+            const width = (nextWeek - week) * weekWidth;
+            // Only show label if there's enough space (at least 3 weeks)
+            if (width < 45) return null;
+            return (
+              <div
+                key={i}
+                style={{ width: `${width}px` }}
+                className="shrink-0"
+              >
+                {month}
+              </div>
+            );
+          });
+        })()}
       </div>
 
       {/* Grid */}
