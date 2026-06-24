@@ -1,0 +1,581 @@
+{
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How it works",
+    "pricing": "Pricing",
+    "login": "Login",
+    "getStarted": "Get Started",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "logout": "Logout",
+    "home": "Home",
+    "pyq": "PYQ Practice",
+    "aiChat": "AI Chat",
+    "mentors": "Mentors",
+    "planner": "Study Planner",
+    "groupStudy": "Group Study"
+  },
+  "hero": {
+    "tagline": "Your AI study partner for JEE   doubts, discipline, and direction.",
+    "title": "RESOLVE AI"
+  },
+  "chat": {
+    "startHere": "Start here",
+    "askFirstDoubt": "Ask your first doubt.",
+    "noSignUp": "No sign up required. Just type your question and get started with your preparation.",
+    "askAnything": "Ask anything about JEE...",
+    "startAsking": "Start asking your doubts...",
+    "placeholder": "Type your doubt here...",
+    "send": "Send",
+    "newChat": "New Chat",
+    "recentChats": "Recent Chats",
+    "title": "Resolve AI",
+    "poweredBy": "Powered by Gemini",
+    "thinking": "Thinking...",
+    "tryAsking": "Try asking",
+    "disclaimer": "Verify important concepts from your study material",
+    "welcome": {
+      "title": "Welcome to Resolve AI! 🎯",
+      "subtitle": "I'm your **AI study partner** for JEE preparation. I can help you with:",
+      "features": {
+        "concepts": "📚 **Concept Explanations** - Deep dive into Physics, Chemistry, and Mathematics",
+        "solving": "🧮 **Problem Solving** - Step-by-step solutions with working",
+        "pyqs": "📝 **PYQs** - Previous Year Questions with detailed explanations",
+        "doubts": "💡 **Doubt Clearing** - Ask anything related to JEE syllabus"
+      },
+      "tryAsking": "**Try asking:**",
+      "examples": [
+        "Explain Newton's laws of motion",
+        "Show me PYQs on Organic Chemistry",
+        "Solve this integral: ∫x²e^x dx"
+      ],
+      "cta": "Let's start your JEE preparation journey! 🚀"
+    }
+  },
+  "features": {
+    "title": "Everything a JEE Student Needs   In One Place",
+    "aiDoubtSolver": "AI Doubt Solver",
+    "aiDoubtSolverDesc": "Ask doubts using text or images and get instant explanations.",
+    "pyq": "Previous Year Questions (PYQs)",
+    "pyqDesc": "Chapter-wise and difficulty-wise PYQs for JEE Main & Advanced.",
+    "aiMentor": "AI Mentor",
+    "aiMentorDesc": "Get guidance, motivation, and study help from an AI mentor.",
+    "humanMentors": "Human Mentors",
+    "humanMentorsDesc": "Talk to IIT/NIT students for real exam strategies and guidance.",
+    "performance": "Performance Analysis",
+    "performanceDesc": "Know your weak chapters and track your progress visually.",
+    "timetable": "Smart Timetable & Habit Tracker",
+    "timetableDesc": "Auto-generated study plans with daily habit tracking.",
+    "groupStudy": "Group Study",
+    "groupStudyDesc": "Join live study rooms with peers and study together."
+  },
+  "why": {
+    "title": "Why Students Choose Resolve AI",
+    "subtitle": "Join thousands of students who've transformed their JEE preparation",
+    "card1Title": "Built for JEE",
+    "card2Title": "AI + Human Mentors",
+    "card3Title": "Consistency Focus",
+    "card4Title": "Stress-Free Learning",
+    "reason1": "Built for JEE students only   every feature is designed specifically for your exam",
+    "reason2": "Get the best of both worlds   instant AI help and real guidance from IIT/NIT mentors",
+    "reason3": "We focus on building habits and consistency, not creating pressure",
+    "reason4": "Designed to reduce stress and confusion in your preparation journey"
+  },
+  "testimonials": {
+    "title": "What Students Are Saying",
+    "subtitle": "Real feedback from JEE aspirants who've transformed their preparation with Resolve AI",
+    "items": [
+      {
+        "quote": "Resolve AI helped me clear my biggest JEE doubts in minutes. The AI tutor explained concepts I struggled with for weeks in a way that finally clicked. My physics score improved by 30 marks!",
+        "name": "Arjun Sharma",
+        "title": "JEE Main 2025 - AIR 1250",
+        "rating": 5
+      },
+      {
+        "quote": "The personalized study plans are a game-changer. Instead of wasting time on topics I already know, Resolve AI focused me on my weak areas. Got into IIT Delhi because of this!",
+        "name": "Priya Patel",
+        "title": "JEE Advanced 2025 - AIR 850",
+        "rating": 5
+      },
+      {
+        "quote": "Organic chemistry used to be my nightmare. The AI mentor broke down reaction mechanisms so simply that I actually started enjoying the subject. From 40% to 85% in 3 months.",
+        "name": "Rohan Kumar",
+        "title": "JEE Main 2025 - AIR 2100",
+        "rating": 5
+      },
+      {
+        "quote": "The instant doubt solving on WhatsApp saved me countless hours. No more waiting for teachers or scrolling through forums. Got my calculus doubts cleared at 2 AM!",
+        "name": "Sneha Gupta",
+        "title": "JEE Main 2025 - AIR 980",
+        "rating": 5
+      },
+      {
+        "quote": "PYQ recommendations were spot-on. Instead of solving random questions, I focused on the exact pattern that appears in JEE. The AI knew exactly what I needed to practice.",
+        "name": "Vikram Singh",
+        "title": "JEE Advanced 2025 - AIR 650",
+        "rating": 5
+      },
+      {
+        "quote": "The progress tracking kept me motivated. Seeing my weak chapters improve week by week made all the hard work feel worth it. Finally cracked JEE after 2 attempts!",
+        "name": "Ananya Reddy",
+        "title": "JEE Main 2025 - AIR 750",
+        "rating": 5
+      },
+      {
+        "quote": "The AI mentor understood my learning style and adapted explanations accordingly. Complex concepts in thermodynamics became so much clearer. Scored 95+ in Physics!",
+        "name": "Aditya Mehta",
+        "title": "JEE Advanced 2025 - AIR 420",
+        "rating": 5
+      },
+      {
+        "quote": "Group study sessions on Resolve AI helped me stay accountable. Studying with peers and solving problems together made preparation less stressful and more fun!",
+        "name": "Kavya Nair",
+        "title": "JEE Main 2025 - AIR 1500",
+        "rating": 5
+      },
+      {
+        "quote": "The chapter-wise PYQ analysis showed me exactly which topics are important. No more guessing what to study - the AI guided me perfectly through the syllabus.",
+        "name": "Rahul Verma",
+        "title": "JEE Advanced 2025 - AIR 780",
+        "rating": 5
+      },
+      {
+        "quote": "From struggling with coordinate geometry to scoring full marks in it! The step-by-step solutions and practice problems were exactly what I needed.",
+        "name": "Ishita Singh",
+        "title": "JEE Main 2025 - AIR 550",
+        "rating": 5
+      },
+      {
+        "quote": "The smart timetable feature helped me balance school and JEE prep perfectly. No more burnout - just consistent, focused studying every day.",
+        "name": "Aryan Joshi",
+        "title": "JEE Advanced 2025 - AIR 320",
+        "rating": 5
+      },
+      {
+        "quote": "Inorganic chemistry tables and reactions were my weakness. The AI's memory techniques and pattern recognition helped me remember everything for the exam!",
+        "name": "Diya Sharma",
+        "title": "JEE Main 2025 - AIR 890",
+        "rating": 5
+      },
+      {
+        "quote": "I was skeptical about AI tutoring at first, but Resolve AI proved me wrong. The detailed explanations for complex mechanics problems were better than my coaching classes!",
+        "name": "Karthik Iyer",
+        "title": "JEE Advanced 2025 - AIR 520",
+        "rating": 5
+      },
+      {
+        "quote": "The mock test analysis feature helped me identify my mistakes. I improved my time management significantly and increased my score by 50 marks in just 2 months.",
+        "name": "Meera Jain",
+        "title": "JEE Main 2025 - AIR 620",
+        "rating": 5
+      },
+      {
+        "quote": "Physical chemistry calculations were my weak point. The AI mentor's approach of breaking down problems into smaller steps made everything click. Scored 95 percentile!",
+        "name": "Siddharth Rao",
+        "title": "JEE Main 2025 - AIR 1100",
+        "rating": 5
+      },
+      {
+        "quote": "The best part is getting doubts solved instantly at any time. Late-night study sessions became so productive with Resolve AI by my side!",
+        "name": "Pooja Krishnan",
+        "title": "JEE Advanced 2025 - AIR 680",
+        "rating": 5
+      },
+      {
+        "quote": "Integration and differentiation were nightmares for me. The AI's visual explanations and practice problems transformed my understanding completely.",
+        "name": "Harsh Pandey",
+        "title": "JEE Main 2025 - AIR 420",
+        "rating": 5
+      },
+      {
+        "quote": "As a dropper, I needed focused guidance. Resolve AI's personalized study plan helped me cover the entire syllabus efficiently and crack JEE on my second attempt!",
+        "name": "Tanvi Agarwal",
+        "title": "JEE Advanced 2025 - AIR 590",
+        "rating": 5
+      },
+      {
+        "quote": "The habit tracker kept me consistent throughout my preparation. Building daily study habits was the key to my success in JEE!",
+        "name": "Aman Bhatt",
+        "title": "JEE Main 2025 - AIR 380",
+        "rating": 5
+      },
+      {
+        "quote": "From being an average student to securing a seat at IIT Bombay - Resolve AI made this journey possible. The AI mentor felt like having a personal JEE coach 24/7!",
+        "name": "Nisha Kapoor",
+        "title": "JEE Advanced 2025 - AIR 280",
+        "rating": 5
+      }
+    ]
+  },
+  "whatsapp": {
+    "title": "Study Help on WhatsApp",
+    "description": "Get reminders, daily questions, and quick doubt solving directly on WhatsApp.",
+    "connect": "Connect WhatsApp"
+  },
+  "cta": {
+    "title": "Start Your JEE Preparation the Smart Way",
+    "createAccount": "Create Free Account",
+    "startFree": "Start for Free"
+  },
+  "common": {
+    "free": "Free",
+    "paid": "Paid",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Retry",
+    "tryAgain": "Try Again",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "viewAll": "View All",
+    "soon": "Soon",
+    "new": "New",
+    "popular": "Popular",
+    "all": "All",
+    "progress": "Progress"
+  },
+  "sidebar": {
+    "dashboard": "Dashboard",
+    "pyqPractice": "PYQ Practice",
+    "aiDoubts": "AI Doubts",
+    "mentors": "Mentors",
+    "planner": "Planner",
+    "performance": "Performance",
+    "groupStudy": "Group Study",
+    "profile": "Profile",
+    "theme": "Theme",
+    "overview": "Overview",
+    "home": "Home",
+    "progressAnalytics": "Progress Analytics",
+    "quickStats": "Quick Stats",
+    "weeklySummary": "Weekly Summary",
+    "achievements": "Achievements",
+    "quickActions": "Quick Actions",
+    "startPractice": "Start Practice",
+    "filterByYear": "Filter by Year",
+    "subjects": "Subjects",
+    "physics": "Physics",
+    "chemistry": "Chemistry",
+    "mathematics": "Mathematics",
+    "startNew": "Start New",
+    "newChat": "New Chat",
+    "recentChats": "Recent Chats",
+    "findMentors": "Find Mentors",
+    "browseAll": "Browse All",
+    "filterBySubject": "Filter by Subject",
+    "mySessions": "My Sessions",
+    "upcoming": "Upcoming",
+    "completed": "Completed",
+    "views": "Views",
+    "todaysPlan": "Today's Plan",
+    "weeklyView": "Weekly View",
+    "monthlyView": "Monthly View",
+    "addTask": "Add Task",
+    "generateAIPlan": "Generate AI Plan",
+    "analytics": "Analytics",
+    "subjectWise": "Subject-wise",
+    "progress": "Progress",
+    "keyMetrics": "Key Metrics",
+    "account": "Account",
+    "myProfile": "My Profile",
+    "settings": "Settings",
+    "notifications": "Notifications"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back",
+    "todayProgress": "Today's Progress",
+    "questionsAttempted": "Questions Attempted",
+    "studyHours": "Study Hours",
+    "currentStreak": "Current Streak",
+    "days": "days",
+    "quickActions": "Quick Actions",
+    "solvePYQ": "Solve PYQ",
+    "askAI": "Ask AI",
+    "viewMentors": "View Mentors",
+    "viewPlanner": "View Planner",
+    "recentActivity": "Recent Activity",
+    "noActivity": "No recent activity",
+    "profileIncomplete": "Complete your profile to get personalized recommendations",
+    "completeProfile": "Complete Profile"
+  },
+  "pyq": {
+    "title": "Previous Year Questions",
+    "subtitle": "Practice with real JEE questions from past exams",
+    "filterByYear": "Filter by Year",
+    "filterBySubject": "Filter by Subject",
+    "filterByDifficulty": "Filter by Difficulty",
+    "allYears": "All Years",
+    "allSubjects": "All Subjects",
+    "allDifficulty": "All Difficulty",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "jeeMain": "JEE Main",
+    "jeeAdvanced": "JEE Advanced",
+    "startPractice": "Start Practice",
+    "questionsAvailable": "questions available",
+    "solved": "Solved",
+    "accuracy": "Accuracy",
+    "searchPlaceholder": "Search chapters...",
+    "all": "All",
+    "viewSolutions": "View Solutions",
+    "bookmark": "Bookmark Chapter"
+  },
+  "mentors": {
+    "title": "Find Your Mentor",
+    "subtitle": "Connect with IIT/NIT students who've cracked JEE",
+    "searchPlaceholder": "Search mentors by name, subject...",
+    "filterByCollege": "Filter by College",
+    "filterBySubject": "Filter by Subject",
+    "allColleges": "All Colleges",
+    "iit": "IIT",
+    "nit": "NIT",
+    "tier1": "Tier 1",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "bookSession": "Book Session",
+    "viewProfile": "View Profile",
+    "perHour": "/hr",
+    "sessions": "sessions",
+    "reviews": "reviews",
+    "expertise": "Expertise",
+    "rating": "Rating",
+    "verified": "Verified",
+    "jeeAdvancedQualified": "JEE Advanced Qualified",
+    "year": "Year",
+    "totalMentors": "Total Mentors",
+    "avgRating": "Avg Rating",
+    "totalSessions": "Sessions Done",
+    "iitOnly": "IIT Only",
+    "availableNow": "Available",
+    "busy": "Busy",
+    "noMentors": "No mentors found",
+    "tryDifferent": "Try adjusting your filters or search query"
+  },
+  "planner": {
+    "title": "Study Planner",
+    "subtitle": "Plan your study schedule and track habits",
+    "todaysTasks": "Today's Tasks",
+    "addTask": "Add Task",
+    "completed": "Completed",
+    "pending": "Pending",
+    "overdue": "Overdue",
+    "noTasks": "No tasks for today",
+    "createFirst": "Create your first task",
+    "generatePlan": "Generate AI Plan",
+    "weeklyGoals": "Weekly Goals",
+    "monthlyGoals": "Monthly Goals",
+    "habits": "Daily Habits",
+    "morning": "Morning",
+    "afternoon": "Afternoon",
+    "evening": "Evening",
+    "night": "Night",
+    "today": "Today",
+    "tasksDone": "Tasks Done",
+    "studied": "Studied",
+    "totalPlanned": "Total Planned",
+    "dailyProgress": "Daily Progress",
+    "taskTitle": "Task Title",
+    "type": "Type",
+    "subject": "Subject",
+    "time": "Time",
+    "duration": "Duration (min)"
+  },
+  "activity": {
+    "title": "Performance Analytics",
+    "subtitle": "Track your progress and identify weak areas",
+    "overview": "Overview",
+    "subjectAnalysis": "Subject Analysis",
+    "weeklyReport": "Weekly Report",
+    "monthlyReport": "Monthly Report",
+    "totalQuestions": "Total Questions",
+    "accuracy": "Accuracy",
+    "streak": "Current Streak",
+    "studyHours": "Study Hours",
+    "physics": "Physics",
+    "chemistry": "Chemistry",
+    "mathematics": "Mathematics",
+    "weakAreas": "Weak Areas",
+    "strongAreas": "Strong Areas",
+    "improvement": "Improvement Areas",
+    "lastWeek": "Last Week",
+    "lastMonth": "Last Month",
+    "allTime": "All Time",
+    "currentStreak": "Current Streak",
+    "longestStreak": "Longest Streak",
+    "activeDays": "Active Days",
+    "nextMilestone": "Next Milestone",
+    "daysToGo": "days to go",
+    "streakTips": "Streak Tips",
+    "tip1": "Solve at least 1 question daily to maintain your streak",
+    "tip2": "PYQ practice counts towards your activity level",
+    "tip3": "Morning study sessions boost retention by 20%",
+    "tip4": "Reach 21 days to form a lasting habit"
+  },
+  "groupStudy": {
+    "title": "Group Study",
+    "subtitle": "Study together with peers in live rooms",
+    "createRoom": "Create Room",
+    "joinRoom": "Join Room",
+    "activeRooms": "Active Rooms",
+    "myRooms": "My Rooms",
+    "participants": "participants",
+    "join": "Join",
+    "leave": "Leave",
+    "mute": "Mute",
+    "unmute": "Unmute",
+    "video": "Video",
+    "share": "Share Screen",
+    "chat": "Chat",
+    "endSession": "End Session",
+    "roomName": "Room Name",
+    "roomDescription": "Room Description",
+    "maxParticipants": "Max Participants",
+    "subject": "Subject",
+    "isPrivate": "Private Room",
+    "roomCode": "Room Code",
+    "enterCode": "Enter room code to join",
+    "studyingNow": "Studying Now",
+    "scheduled": "Scheduled",
+    "noActiveRooms": "No active rooms right now",
+    "createFirstRoom": "Create your first study room!",
+    "focusMode": "Focus Mode",
+    "breakTime": "Break Time",
+    "pomodoroTimer": "Pomodoro Timer",
+    "studyMusic": "Study Music"
+  },
+  "profile": {
+    "title": "My Profile",
+    "editProfile": "Edit Profile",
+    "personalInfo": "Personal Information",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "targetExam": "Target Exam",
+    "targetYear": "Target Year",
+    "currentClass": "Current Class",
+    "coachingCenter": "Coaching Center",
+    "studyPreferences": "Study Preferences",
+    "preferredTime": "Preferred Study Time",
+    "weeklyGoal": "Weekly Goal",
+    "achievements": "Achievements",
+    "badges": "Badges",
+    "statistics": "Statistics",
+    "memberSince": "Member Since",
+    "totalStudyHours": "Total Study Hours",
+    "questionsAttempted": "Questions Attempted",
+    "longestStreak": "Longest Streak"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "forgotPassword": "Forgot Password?",
+    "rememberMe": "Remember me",
+    "orContinueWith": "Or continue with",
+    "google": "Google",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "welcomeBack": "Welcome Back",
+    "createAccount": "Create your account",
+    "loginSubtitle": "Sign in to continue your JEE preparation",
+    "registerSubtitle": "Join thousands of JEE aspirants"
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Got Questions? We've Got Answers",
+    "subtitle": "Everything you need to know about Resolve AI and how it can help you ace JEE. Can't find what you're looking for? Feel free to reach out!",
+    "contactButton": "Any questions? Reach out",
+    "items": [
+      {
+        "question": "How does the AI doubt solver work?",
+        "answer": "Our AI doubt solver uses advanced machine learning to understand your queries and provide step-by-step solutions. Simply type or upload your question, and get instant explanations tailored to JEE preparation."
+      },
+      {
+        "question": "Are the PYQs updated regularly?",
+        "answer": "Yes! We continuously update our database with the latest Previous Year Questions from JEE Main and Advanced. Our collection includes questions from the past 20 years with detailed solutions."
+      },
+      {
+        "question": "Can I access Resolve AI on mobile?",
+        "answer": "Absolutely! Resolve AI is fully responsive and works seamlessly on all devices. You can also connect via WhatsApp for quick doubt solving on the go."
+      },
+      {
+        "question": "What makes your AI mentor different?",
+        "answer": "Our AI mentor doesn't just solve problems it understands your learning patterns, identifies weak areas, and creates personalized study plans. It's like having a JEE expert available 24/7."
+      },
+      {
+        "question": "Do you offer refunds?",
+        "answer": "We offer a 7-day money-back guarantee on all paid plans. If you're not satisfied with our platform, simply contact support for a full refund within the first week."
+      },
+      {
+        "question": "How do live study sessions work?",
+        "answer": "Live study sessions are collaborative spaces where you can join other JEE aspirants. Study together, solve problems in real-time, and stay motivated with peer support."
+      },
+      {
+        "question": "Is there a free trial available?",
+        "answer": "Yes! You can start with our free tier which includes basic AI doubt solving and limited PYQ access. Upgrade anytime to unlock premium features."
+      },
+      {
+        "question": "Can I switch between plans?",
+        "answer": "Of course! You can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle, and we'll prorate the difference."
+      }
+    ]
+  },
+  "pricing": {
+    "tag": "JEE Preparation Plans",
+    "title": "Start Your JEE Journey",
+    "description": "Choose the plan that fits your preparation needs",
+    "popular": "Popular!",
+    "perMonth": "/month",
+    "getStarted": "Get Started",
+    "tiers": {
+      "foundation": {
+        "name": "Foundation",
+        "description": "Perfect for JEE beginners",
+        "features": ["AI Doubt Solver", "10,000+ PYQs Access", "Basic Study Planner", "Performance Analytics"]
+      },
+      "advanced": {
+        "name": "Advanced",
+        "description": "For serious JEE aspirants",
+        "features": ["Unlimited Doubt Solving", "Complete PYQ Database", "AI Mentor Sessions", "Live Study Groups"]
+      },
+      "proElite": {
+        "name": "Pro Elite",
+        "description": "For JEE toppers",
+        "features": ["1-on-1 Human Mentorship", "Advanced Mock Tests", "Personalized Strategy", "Priority Support"]
+      }
+    }
+  },
+  "footer": {
+    "brand": "Resolve AI",
+    "tagline": "Your AI study partner for JEE preparation. Doubts, discipline, and direction.",
+    "programs": "Programs",
+    "jeeMain": "JEE Main Preparation",
+    "jeeAdvanced": "JEE Advanced Course",
+    "aiDoubtSolving": "AI Doubt Solving",
+    "mockTests": "Mock Tests",
+    "studyGroups": "Study Groups",
+    "platform": "Platform",
+    "aiTutor": "AI Tutor",
+    "practiceProblems": "Practice Problems",
+    "progressTracking": "Progress Tracking",
+    "studyPlans": "Study Plans",
+    "findMentors": "Find Mentors",
+    "company": "Company",
+    "aboutUs": "About Us",
+    "careers": "Careers",
+    "blog": "Blog",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© {year} Resolve AI. All rights reserved.",
+    "madeWith": "Made with ❤️ for JEE aspirants"
+  }
+}

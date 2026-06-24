@@ -1,0 +1,44 @@
+# requirements.txt
+
+# Core Framework
+fastapi
+uvicorn[standard]
+pydantic[email]
+pydantic-settings
+python-dotenv
+
+# Database
+sqlalchemy
+aiosqlite
+alembic
+greenlet
+
+# Authentication
+python-jose[cryptography]
+passlib==1.7.4
+bcrypt==4.1.2
+httpx
+authlib
+
+# File uploads
+python-multipart
+
+# AI/ML Integration (for Naman's work)
+qdrant-client
+requests
+
+# LangChain & LangGraph for AI Agent
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-google-genai>=1.0.0
+langgraph>=0.0.40
+google-generativeai>=0.3.0
+
+# WebSocket (for Rooms)
+websockets
+
+# WhatsApp Bot (Twilio)
+twilio
+
+# Utils
+email-validator
